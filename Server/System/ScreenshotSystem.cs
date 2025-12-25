@@ -26,6 +26,14 @@ namespace Server.System
 
         private static readonly ConcurrentDictionary<string, DateTime> LastUploadRequest = new ConcurrentDictionary<string, DateTime>();
 
+        /// <summary>
+        /// Cleans up cached data when a player disconnects.
+        /// </summary>
+        public static void CleanupPlayer(string playerName)
+        {
+            LastUploadRequest.TryRemove(playerName, out _);
+        }
+
         #region Public Methods
 
         /// <summary>

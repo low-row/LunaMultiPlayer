@@ -47,6 +47,7 @@ namespace Server.Client
                     MessageQueuer.RelayMessage<PlayerConnectionSrvMsg>(client, msgData);
                     LockSystem.ReleasePlayerLocks(client);
                     WarpSystem.RemoveSubspace(client.Subspace);
+                    ScreenshotSystem.CleanupPlayer(client.PlayerName);
                 }
 
                 try

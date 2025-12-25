@@ -23,6 +23,30 @@ namespace Server.System.Vessel
 
         #endregion
 
+        #region Cleanup
+
+        /// <summary>
+        /// Cleans up all cached data for a removed vessel to prevent memory leaks.
+        /// Semaphore cleanup is delayed to let in-flight Task.Run operations complete.
+        /// </summary>
+        public static void CleanupVessel(Guid vesselId)
+        {
+            // Immediately clean throttle dictionaries
+            LastPositionUpdateDictionary.TryRemove(vesselId, out _);
+            LastFlightStateUpdateDictionary.TryRemove(vesselId, out _);
+            LastResourcesUpdateDictionary.TryRemove(vesselId, out _);
+            LastUpdateDictionary.TryRemove(vesselId, out _);
+            
+            // Delay semaphore cleanup to let in-flight tasks complete (~100ms grace period)
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(100);
+                Semaphore.TryRemove(vesselId, out _);
+            });
+        }
+
+        #endregion
+
         /// <summary>
         /// Raw updates a vessel in the dictionary and takes care of the locking in case we received another vessel message type
         /// </summary>
