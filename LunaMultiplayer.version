@@ -1,10 +1,10 @@
 {
     "NAME":     "Luna Multiplayer",
-    "URL":      "https://github.com/Fierce-Cat/LunaMultiplayer/raw/master/LunaMultiplayer.version",
-    "DOWNLOAD": "https://github.com/Fierce-Cat/LunaMultiplayer/releases",
+    "URL":      "https://github.com/Fierce-Cat/LunaMultiPlayer/raw/master/LunaMultiplayer.version",
+    "DOWNLOAD": "https://github.com/Fierce-Cat/LunaMultiPlayer/releases",
     "GITHUB": {
         "USERNAME":   "Fierce-Cat",
-        "REPOSITORY": "LunaMultiplayer"
+        "REPOSITORY": "LunaMultiPlayer"
     },
     "VERSION": {
         "MAJOR": 0,
