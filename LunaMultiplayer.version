@@ -1,14 +1,14 @@
 {
     "NAME":     "Luna Multiplayer",
-    "URL":      "https://github.com/LunaMultiplayer/LunaMultiplayer/raw/master/LunaMultiplayer.version",
-    "DOWNLOAD": "https://github.com/LunaMultiplayer/LunaMultiplayer/releases",
+    "URL":      "https://github.com/Fierce-Cat/LunaMultiplayer/raw/master/LunaMultiplayer.version",
+    "DOWNLOAD": "https://github.com/Fierce-Cat/LunaMultiplayer/releases",
     "GITHUB": {
-        "USERNAME":   "LunaMultiplayer",
+        "USERNAME":   "Fierce-Cat",
         "REPOSITORY": "LunaMultiplayer"
     },
     "VERSION": {
         "MAJOR": 0,
-        "MINOR": 29,
+        "MINOR": 30,
         "PATCH": 1
     },
     "KSP_VERSION": {
